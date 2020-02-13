@@ -1,0 +1,23 @@
+object Form2: TForm2
+  Left = 1250
+  Height = 565
+  Top = 124
+  Width = 311
+  Caption = 'Log'
+  ClientHeight = 565
+  ClientWidth = 311
+  LCLVersion = '1.8.0.6'
+  object memOutput: TMemo
+    Left = 8
+    Height = 549
+    Top = 8
+    Width = 293
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Lines.Strings = (
+      'Starting batch process...'
+    )
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+end

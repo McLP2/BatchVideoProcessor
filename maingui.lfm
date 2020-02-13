@@ -1,0 +1,137 @@
+object Form1: TForm1
+  Left = 1092
+  Height = 413
+  Top = 509
+  Width = 634
+  AllowDropFiles = True
+  Caption = 'Batch Video Processor'
+  ClientHeight = 413
+  ClientWidth = 634
+  Constraints.MinHeight = 100
+  Constraints.MinWidth = 372
+  OnDropFiles = FormDropFiles
+  LCLVersion = '1.8.0.6'
+  object ckbDeinterlace: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 8
+    Width = 79
+    Caption = 'Deinterlace'
+    TabOrder = 0
+  end
+  object ckbStabilize: TCheckBox
+    Left = 96
+    Height = 19
+    Top = 8
+    Width = 63
+    Caption = 'Stabilize'
+    OnChange = ckbStabilizeChange
+    TabOrder = 1
+  end
+  object lbxFiles: TListBox
+    Left = 8
+    Height = 332
+    Top = 40
+    Width = 616
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ItemHeight = 0
+    MultiSelect = True
+    OnKeyUp = lbxFilesKeyUp
+    TabOrder = 3
+  end
+  object btnStart: TButton
+    Left = 549
+    Height = 25
+    Top = 380
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = 'Start'
+    OnClick = btnStartClick
+    TabOrder = 4
+  end
+  object btnAddFiles: TButton
+    Left = 496
+    Height = 25
+    Top = 5
+    Width = 128
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'Add Files...'
+    OnClick = btnAddFilesClick
+    TabOrder = 2
+  end
+  object edtFFmpegPath: TEdit
+    Left = 8
+    Height = 23
+    Top = 382
+    Width = 456
+    Anchors = [akLeft, akRight, akBottom]
+    ReadOnly = True
+    TabOrder = 5
+    Text = 'Select FFmpeg'
+  end
+  object btnFindFFmpeg: TButton
+    Left = 472
+    Height = 25
+    Top = 380
+    Width = 56
+    Anchors = [akRight, akBottom]
+    Caption = 'Find...'
+    OnClick = btnFindFFmpegClick
+    TabOrder = 6
+  end
+  object spnShakiness: TSpinEdit
+    Left = 162
+    Height = 23
+    Top = 7
+    Width = 50
+    Enabled = False
+    MaxValue = 10
+    MinValue = 1
+    TabOrder = 7
+    Value = 4
+  end
+  object ckbProxy: TCheckBox
+    Left = 232
+    Height = 19
+    Top = 8
+    Width = 90
+    Caption = 'make proxies'
+    OnChange = ckbProxyChange
+    TabOrder = 8
+  end
+  object lblBitrate: TLabel
+    Left = 335
+    Height = 15
+    Top = 10
+    Width = 71
+    Caption = 'Bitrate (kb/s):'
+    ParentColor = False
+  end
+  object spnBitrate: TSpinEdit
+    Left = 416
+    Height = 23
+    Top = 7
+    Width = 74
+    MaxValue = 100000000
+    MinValue = 20
+    TabOrder = 9
+    Value = 16000
+  end
+  object dlgFindFFmpeg: TOpenDialog
+    Title = 'Find FFmpeg.exe'
+    Filter = 'FFmpeg|ffmpeg.exe'
+    left = 432
+    top = 344
+  end
+  object dlgOpenFiles: TOpenDialog
+    Title = 'Open Video Files'
+    Options = [ofAllowMultiSelect, ofEnableSizing, ofViewDetail]
+    left = 408
+    top = 32
+  end
+  object dlgOutputFolder: TSelectDirectoryDialog
+    Title = 'Select output folder'
+    left = 568
+    top = 344
+  end
+end
